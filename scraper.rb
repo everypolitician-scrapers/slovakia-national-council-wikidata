@@ -31,5 +31,4 @@ term_1998 = EveryPolitician::Wikidata.wikipedia_xpath(
 names = (term_2012 + term_2010 + term_2006 + term_2002 + term_1998).uniq
 
 EveryPolitician::Wikidata.scrape_wikidata(names: { sk: names }, output: false) 
-warn EveryPolitician::Wikidata.notify_rebuilder
 
