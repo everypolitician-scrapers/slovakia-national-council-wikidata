@@ -3,6 +3,11 @@
 
 require 'wikidata/fetcher'
 
+term_2016 = EveryPolitician::Wikidata.wikipedia_xpath(
+  url:   'https://sk.wikipedia.org/wiki/Zoznam_poslancov_NR_SR_(2016_–_2020)',
+  xpath: '//h2[contains(.,"Poslanci")]//following-sibling::ol[1]/li//a[not(@class="new")]/@title',
+)
+
 term_2012 = EveryPolitician::Wikidata.wikipedia_xpath( 
   url:   'https://sk.wikipedia.org/wiki/Zoznam_poslancov_NR_SR_(2012_–_2016)',
   xpath: '//h2[contains(.,"Poslanci")]//following-sibling::ol[1]/li//a[not(@class="new")]/@title',
@@ -28,7 +33,7 @@ term_1998 = EveryPolitician::Wikidata.wikipedia_xpath(
   xpath: '//h2[contains(.,"Poslanci")]//following-sibling::ul[1]/li//a[1][not(@class="new")]/@title',
 ) 
 
-names = (term_2012 + term_2010 + term_2006 + term_2002 + term_1998).uniq
+names = (term_2016 + term_2012 + term_2010 + term_2006 + term_2002 + term_1998).uniq
 
 EveryPolitician::Wikidata.scrape_wikidata(names: { sk: names }, output: false) 
 
