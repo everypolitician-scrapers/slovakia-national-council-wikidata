@@ -5,17 +5,17 @@ require 'wikidata/fetcher'
 
 term_2016 = EveryPolitician::Wikidata.wikipedia_xpath(
   url:   'https://sk.wikipedia.org/wiki/Zoznam_poslancov_NR_SR_(2016_–_2020)',
-  xpath: '//h2[contains(.,"Poslanci")]//following-sibling::ol[1]/li//a[not(@class="new")]/@title',
+  xpath: '//h2[contains(.,"Poslanci")]//following-sibling::table[1]//tr[td]//td[2]//a[not(@class="new")]/@title',
 )
 
 term_2012 = EveryPolitician::Wikidata.wikipedia_xpath(
   url:   'https://sk.wikipedia.org/wiki/Zoznam_poslancov_NR_SR_(2012_–_2016)',
-  xpath: '//h2[contains(.,"Poslanci")]//following-sibling::ol[1]/li//a[not(@class="new")]/@title',
+  xpath: '//h2[contains(.,"Poslanci")]//following-sibling::table[1]//tr[td]//td[2]//a[not(@class="new")]/@title',
 )
 
 term_2010 = EveryPolitician::Wikidata.wikipedia_xpath(
   url:   'https://sk.wikipedia.org/wiki/Zoznam_poslancov_NR_SR_(2010_–_2012)',
-  xpath: '//h2[contains(.,"Poslanci")]//following-sibling::ol[1]/li//a[not(@class="new")]/@title',
+  xpath: '//h2[contains(.,"Poslanci")]//following-sibling::table[1]//tr[td]//td[2]//a[not(@class="new")]/@title',
 )
 
 term_2006 = EveryPolitician::Wikidata.wikipedia_xpath(
